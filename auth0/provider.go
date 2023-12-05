@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/scastria/terraform-provider-auth0/client"
+	"github.com/scastria/terraform-provider-auth0/auth0/client"
 )
 
 func Provider() *schema.Provider {
@@ -26,11 +26,9 @@ func Provider() *schema.Provider {
 				DefaultFunc: schema.EnvDefaultFunc("AUTH0_CLIENT_SECRET", nil),
 			},
 		},
-		ResourcesMap: map[string]*schema.Resource{
-			//"konnect_plugin":                  resourcePlugin(),
-		},
+		ResourcesMap: map[string]*schema.Resource{},
 		DataSourcesMap: map[string]*schema.Resource{
-			//"konnect_consumer":      dataSourceConsumer(),
+			"auth0_email_users": dataSourceEmailUsers(),
 		},
 		ConfigureContextFunc: providerConfigure,
 	}

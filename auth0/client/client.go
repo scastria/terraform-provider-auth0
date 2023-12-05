@@ -89,8 +89,8 @@ func NewClient(ctx context.Context, domain string, clientId string, clientSecret
 	return c, nil
 }
 
-func (c *Client) HttpRequest(ctx context.Context, isRegion bool, method string, path string, query url.Values, headerMap http.Header, body *bytes.Buffer) (*bytes.Buffer, error) {
-	req, err := http.NewRequest(method, c.RequestPath(isRegion, path), body)
+func (c *Client) HttpRequest(ctx context.Context, method string, path string, query url.Values, headerMap http.Header, body *bytes.Buffer) (*bytes.Buffer, error) {
+	req, err := http.NewRequest(method, c.RequestPath(path), body)
 	if err != nil {
 		return nil, &RequestError{StatusCode: http.StatusInternalServerError, Err: err}
 	}
@@ -136,6 +136,6 @@ func (c *Client) HttpRequest(ctx context.Context, isRegion bool, method string, 
 	return respBody, nil
 }
 
-func (c *Client) RequestPath(isRegion bool, path string) string {
-	return fmt.Sprintf("https://%s/v2/%s", c.domain, path)
+func (c *Client) RequestPath(path string) string {
+	return fmt.Sprintf("https://%s/api/v2/%s", c.domain, path)
 }
