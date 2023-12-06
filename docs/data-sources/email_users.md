@@ -1,8 +1,8 @@
-# Data Source: auth0_email_users
+# Data Source: auth1_email_users
 Represents a collection of users that all share the same email address
 ## Example usage
 ```hcl
-data "auth0_email_users" "example" {
+data "auth1_email_users" "example" {
   email = "hello@example.com"
 }
 ```

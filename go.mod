@@ -1,4 +1,4 @@
-module github.com/scastria/terraform-provider-auth0
+module github.com/scastria/terraform-provider-auth1
 
 go 1.19
 

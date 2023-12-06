@@ -1,14 +1,14 @@
 terraform {
   required_providers {
-    auth0 = {
-      source = "github.com/scastria/auth0"
+    auth1 = {
+      source = "github.com/scastria/auth1"
     }
   }
 }
 
-provider "auth0" {
+provider "auth1" {
 }
 
-data "auth0_email_users" "EmailUsers" {
+data "auth1_email_users" "EmailUsers" {
   email = "ssoni@greenstreet.com"
 }

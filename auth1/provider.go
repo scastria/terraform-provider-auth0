@@ -1,10 +1,10 @@
-package auth0
+package auth1
 
 import (
 	"context"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/scastria/terraform-provider-auth0/auth0/client"
+	"github.com/scastria/terraform-provider-auth1/auth1/client"
 )
 
 func Provider() *schema.Provider {
@@ -28,7 +28,7 @@ func Provider() *schema.Provider {
 		},
 		ResourcesMap: map[string]*schema.Resource{},
 		DataSourcesMap: map[string]*schema.Resource{
-			"auth0_email_users": dataSourceEmailUsers(),
+			"auth1_email_users": dataSourceEmailUsers(),
 		},
 		ConfigureContextFunc: providerConfigure,
 	}

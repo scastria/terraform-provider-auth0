@@ -5,15 +5,15 @@ functionality.  The provider needs to be configured with the proper credentials 
 ```hcl
 terraform {
   required_providers {
-    auth0 = {
-      source  = "scastria/auth0"
+    auth1 = {
+      source  = "scastria/auth1"
       version = "~> 0.1"
     }
   }
 }
 
 # Configure the Auth0 Provider
-provider "auth0" {
+provider "auth1" {
   domain = "XXXX"
   client_id = "YYYY"
   client_secret = "ZZZZ"

@@ -1,4 +1,4 @@
-package auth0
+package auth1
 
 import (
 	"bytes"
@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/scastria/terraform-provider-auth0/auth0/client"
+	"github.com/scastria/terraform-provider-auth1/auth1/client"
 	"net/http"
 	"net/url"
 	"regexp"
